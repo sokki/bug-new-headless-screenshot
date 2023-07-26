@@ -5,6 +5,7 @@ import * as fs from "fs";
 async function screenshot(headless) {
     const chrome = await puppeteer.launch({
         headless,
+        ignoreDefaultArgs: ['--enable-automation'],
     });
 
     const endpoint = chrome.wsEndpoint();
